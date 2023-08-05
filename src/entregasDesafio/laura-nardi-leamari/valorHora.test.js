@@ -11,4 +11,15 @@ describe("Valor por hora", () => {
     // verificação
     expect(result).toEqual(29)
   })
+
+  test("retornar o valor arredondado correto dado um valor recebido no mês", () => {
+    // setup
+    const valorPorMes = 5000;
+
+    // ação
+    const result = calcularValorPorHora(valorPorMes)
+
+    // verificação
+    expect(result).toEqual(16)
+  })
 })

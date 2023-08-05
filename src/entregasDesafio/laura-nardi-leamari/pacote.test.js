@@ -73,7 +73,7 @@ describe("Calcular pacote correto para cada projeto", () => {
     expect(result).toEqual('pacote_premium')
   })
 
-  test("Retorna pacote premium caso o número total de horas seja apartir de 201", () => {
+  test("Retorna pacote premium caso o número total de horas seja maior que 200", () => {
 
     // setup
     const totalDeHorasPorProjeto = 201;

@@ -21,6 +21,27 @@ describe("Calculo de horas totais de um projeto", () => {
     expect(result).toEqual(72)
 
   })
+
+  test("Dado uma array com as funcionalidades desejadas por projeto, deve retornar a soma de horas necessárias totais", () => {
+
+    // setup
+    const funcionalidades = [
+      "setup",
+      "otimizacao_seo",
+      "construcao_1_pagina",
+      "construcao_2_pagina",
+      "construcao_1_pagina",
+      "formularios",
+      "ssr",
+    ]
+
+    // ação
+    const result = calcularHorasDeProjeto(funcionalidades)
+
+    // verificação
+    expect(result).toEqual(72)
+
+  })
 });
 
 
