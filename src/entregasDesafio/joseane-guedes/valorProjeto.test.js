@@ -3,8 +3,8 @@ const pacote = require("../../dominio/calculadora/Projeto/pacote");
 
 jest.mock("../../dominio/calculadora/Projeto/pacote.js");
 
-describe('calcular o Valor Total do Projeto', () => {
-    test('deve retornar o valor total de um projeto dado as funcionalidades e o valor da pessoa desenvolvedora', () => {
+describe('Calcular o Valor Total do Projeto desenvolvido', () => {
+    test('Deve retornar o valor total de um projeto dado as funcionalidades e o valor da pessoa desenvolvedora', () => {
         // Setup
         const funcionalidades = [
             "setup",

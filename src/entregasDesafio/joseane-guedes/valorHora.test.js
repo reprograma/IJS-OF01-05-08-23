@@ -1,19 +1,6 @@
-// const { calcularValorPorHora } = require("../../dominio/calculadora/Hora/valorHora")
-
-// describe('Valor por hora', () => {
-//     test('retornar o valor arredondado correto dado um valor recebido no mês', () => {
-//         // setup
-//         const valorPorMes = 5000;
-//         // acao
-//         const result = calcularValorPorHora(valorPorMes)
-//         // verificacao
-//         expect(result).toEqual(29)
-//     })
-// });
-
 const { calcularValorPorHora } = require("../../dominio/calculadora/Hora/valorHora");
 
-describe('Calcular Valor Por Hora', () => {
+describe('Calcular o Valor Por Hora trabalhada', () => {
 
     test('deve retornar o valor arredondado correto dado um valor recebido no mês', () => {
         // Setup

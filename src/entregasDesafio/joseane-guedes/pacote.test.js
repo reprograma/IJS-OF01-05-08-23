@@ -1,6 +1,6 @@
 const { calcularPacote } = require("../../dominio/calculadora/Projeto/pacote");
 
-describe('Calculando pacote correto para cada projeto', () => {
+describe('Calcular o pacote correto para cada projeto', () => {
     let totalHoras;
 
     beforeEach(() => {

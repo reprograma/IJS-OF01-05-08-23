@@ -1,6 +1,6 @@
 const { calcularHorasDeProjeto } = require('../../dominio/calculadora/Projeto/horasPorProjeto')
 
-describe('Calculo de horas totais de um projeto', () => {
+describe('Calcular horas totais de um projeto', () => {
     test('Dado uma array com as funcionalidades desejadas do projeto, deve retornar a soma de horas necessárias totais', () => {
         // setup
         const funcionalidades = [
