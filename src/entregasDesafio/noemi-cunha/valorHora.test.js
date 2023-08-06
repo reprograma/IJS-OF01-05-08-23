@@ -20,4 +20,21 @@ describe("Valor por hora", () => {
 		//verificação
 		expect(result).toEqual(29);
 	});
+	test("retornar o valor 0 para valor nulo", () => {
+		//setup
+		const valorPorMes = null;
+		//ação
+		const result = calcularValorPorHora(valorPorMes);
+		//verificação
+		expect(result).toEqual(0);
+	});
+	test("retornar o valor 0 se a entrada for não numérica", () => {
+		//setup
+		const valorPorMes = "teste";
+		//ação
+		const result = calcularValorPorHora(valorPorMes);
+		//verificação
+		expect(result).toEqual(NaN);
+	});
+
 });
