@@ -39,35 +39,62 @@ describe("Calcular pacote correto para cada projeto", () =>{
         const totalDaHorasPorProjeto = 100;
 
         //acao
-        const result = calcularHorasDeProjeto(totalDaHorasPorProjeto);
+        const result = calcularPacote(totalDaHorasPorProjeto);
 
         //verificacao
         expect(result).toEqual("pacote_intermediario")
     })
 
-    test(" Retorna o pacote premium caso o número total seja de horas a partir de 201", ()=> {
-        //setup
-        const totalDaHorasPorProjeto = 210;
-
-        //acao
-        const result = calcularHorasDeProjeto(totalDaHorasPorProjeto)
-
-        //verificacao
-        expect(result).toEqual("pacote_premium");
-
-    })
-
-     test(" Retorna o pacote premium se o projeto tiver exatamente 200h", ()=> {
+    test(" Retorna o pacote premium se o projeto tiver exatamente 200h", ()=> {
 
         //setup
         const totalDaHorasPorProjeto = 200;
 
         //acao
 
-        const result = calcularHorasDeProjeto(totalDaHorasPorProjeto);
+        const result = calcularPacote(totalDaHorasPorProjeto);
 
         //verificacao
 
         expect(result).toEqual("pacote_premium")
     })
+     
+    test("Retorna o pacote premium caso o número total seja de horas a partir de 201", ()=> {
+        //setup
+        const totalDaHorasPorProjeto = 210;
+
+        //acao
+        const result = calcularPacote(totalDaHorasPorProjeto)
+
+        //verificacao
+        expect(result).toEqual("pacote_premium");
+
+    })
+});
+
+
+describe("Calcular Horas de Projeto", () => {
+  test("Se a lista contendo 3 funcionalidades terá X horas", () => {
+    const listaDeFuncionalidades = ["setup", "construcao_1_pagina", "ssr"]
+    expect(calcularHorasDeProjeto(listaDeFuncionalidades)).toBe(24)
+  })
+
+  test("Calcular horas quando não existe a funcionalidade", () => {
+    const listaDeFuncionalidadeInexistente = ["testes"]
+    expect(calcularHorasDeProjeto(listaDeFuncionalidadeInexistente)).toBeNaN()
+  }) 
+
+  test("Todas as funcionalidades retornam 104 horas de projeto", () => {
+    const listaTodasFuncionalidades = [
+        "setup",
+        "formulario",
+        "responsividade",
+        "otimizacao_seo",
+        "construcao_1_pagina",
+        "integracao_mailchimp",
+        "ssr",
+        "integracao_api_propria"
+    ]
+    expect(calcularHorasDeProjeto(listaTodasFuncionalidades)).toBe(104)
+  })
 });
