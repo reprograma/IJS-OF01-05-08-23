@@ -5,7 +5,7 @@ jest.mock("../../dominio/calculadora/Projeto/pacote.js");
 
 describe('Calcular o Valor Total do Projeto desenvolvido', () => {
     test('Deve retornar o valor total de um projeto dado as funcionalidades e o valor da pessoa desenvolvedora', () => {
-        // Setup
+        // setup
         const funcionalidades = [
             "setup",
             "responsividade",
@@ -16,10 +16,10 @@ describe('Calcular o Valor Total do Projeto desenvolvido', () => {
         const valorHora = 70;
         pacote.calcularPacote.mockReturnValue("pacote_basico");
 
-        // Act
+        // Açao
         const result = calcularValorTotalProjeto(funcionalidades, valorHora);
 
-        // Assert
+        // verificacao
         expect(result).toEqual(3696);
     });
 });
