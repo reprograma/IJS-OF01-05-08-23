@@ -1,6 +1,6 @@
 const { calcularValorPorHora } = require("../../dominio/calculadora/Hora/valorHora");
 
-describe('Calcular o valor por hora trabalhada', () => {
+describe('Calcular Valor Por Hora', () => {
 
     test('deve retornar o valor arredondado correto dado um valor recebido no mês', () => {
         // Setup

@@ -1,10 +1,7 @@
-const { calcularValorTotalProjeto } = require("../../dominio/calculadora/Projeto/valorProjeto");
-const pacote = require("../../dominio/calculadora/Projeto/pacote");
+const { calcularHorasDeProjeto } = require('../../dominio/calculadora/Projeto/horasPorProjeto')
 
-jest.mock("../../dominio/calculadora/Projeto/pacote.js");
-
-describe('Calcular o Valor Total do Projeto desenvolvido', () => {
-    test('Deve retornar o valor total de um projeto dado as funcionalidades e o valor da pessoa desenvolvedora', () => {
+describe('Calculo de horas totais de um projeto', () => {
+    test('Dado uma array com as funcionalidades desejadas do projeto, deve retornar a soma de horas necessárias totais', () => {
         // setup
         const funcionalidades = [
             "setup",
@@ -12,14 +9,23 @@ describe('Calcular o Valor Total do Projeto desenvolvido', () => {
             "construcao_1_pagina",
             "construcao_1_pagina",
             "construcao_1_pagina",
-        ];
-        const valorHora = 70;
-        pacote.calcularPacote.mockReturnValue("pacote_basico");
-
-        // Açao
-        const result = calcularValorTotalProjeto(funcionalidades, valorHora);
-
+            "formulario",
+            "ssr"
+        ]
+        // acao
+        const result = calcularHorasDeProjeto(funcionalidades)
         // verificacao
-        expect(result).toEqual(3696);
+        expect(result).toEqual(72)
+    });
+
+    test('deve retornar 0 para uma array vazia de funcionalidades', () => {
+        // Setup
+        const funcionalidades = [];
+
+        // Ação
+        const result = calcularHorasDeProjeto(funcionalidades);
+
+        // Verificação
+        expect(result).toEqual(0);
     });
 });
