@@ -6,7 +6,7 @@ jest.mock("../../dominio/calculadora/Projeto/pacote.js")
 describe("valor total do projeto", ()=> {
     beforeEach(() => {
         pacote.calcularPacote.mockReturnValue("pacote_basico")
-    })
+    });
     test("Retornar valor total de um projeto dado as funcionalidades e valor hora da pessoa desenvolvedora", ()=> {
         //setup
         const funcionalidades = [

@@ -17,7 +17,7 @@ describe("Calcular pacote correto para cada projeto", ()=> {
         const result = calcularPacote(totalDeHorasPorProjeto)
         //verificação
         expect(result).toEqual("pacote_basico")
-    })
+    });
 
     test("Retorna o pacote intermediario caso o número total de horas seja entre 51 e 100", ()=> {
         //setup
@@ -26,7 +26,7 @@ describe("Calcular pacote correto para cada projeto", ()=> {
         const result = calcularPacote(totalDeHorasPorProjeto)
         //verificação
         expect(result).toEqual("pacote_intermediario")
-    })
+    });
 
     test("Retorna o pacote intermediario caso o número total de horas seja exatamente 100h", ()=> {
         //setup
@@ -35,7 +35,7 @@ describe("Calcular pacote correto para cada projeto", ()=> {
         const result = calcularPacote(totalDeHorasPorProjeto)
         //verificação
         expect(result).toEqual("pacote_intermediario")
-    })
+    });
 
     test("Retorna o pacote premium caso o número total de horas seja entre 101 e 200", ()=> {
         //setup
@@ -44,7 +44,7 @@ describe("Calcular pacote correto para cada projeto", ()=> {
         const result = calcularPacote(totalDeHorasPorProjeto)
         //verificação
         expect(result).toEqual("pacote_premium")
-    })
+    });
 
     test("Deve retornar uma String quando número de horas for muito alto", () => {
         //setup

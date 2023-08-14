@@ -8,7 +8,7 @@ describe("Valor por hora", ()=>{
         const result = calcularValorPorHora(valorPorMes)
         //verificação
         expect(result).toEqual(29)
-    })
+    });
 
     test("Retornar 0 quando o valor mensal for 0", () => {
         //setup
