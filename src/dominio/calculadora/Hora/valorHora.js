@@ -4,8 +4,12 @@ const {
 } = require('../constantes/constantes')
 
 const calcularValorPorHora = (rendaMensal) => {
-  const horasTrabalhadasPorMes = (HORAS_POR_DIA * DIAS_UTEIS_NO_MES);
-  const valorPorHora = rendaMensal / horasTrabalhadasPorMes;
+  if (rendaMensal <= 0) {
+    return 0;
+  }
+
+  const horasTrabalhadasPorMes = (HORAS_POR_DIA * DIAS_UTEIS_NO_MES); //176h
+  const valorPorHora = rendaMensal / horasTrabalhadasPorMes; //28.40
 
   return Math.ceil(valorPorHora);
 };
